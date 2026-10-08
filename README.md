@@ -8,17 +8,17 @@ Most of the hard work in enterprise analytics happens before anything reaches a 
 
 ### What I'm building here
 
-**Start here → [people-analytics-warehouse](https://github.com/thialp/people-analytics-warehouse):** a synthetic HR data warehouse with a SQL pipeline that explains every dollar of change in workforce pay, in nominal and constant currency, reconciled to the cent and covered by 12 automated tests.
+**Start here → [people-analytics-warehouse](https://github.com/thialp/people-analytics-warehouse):** a synthetic HR data warehouse with a SQL pipeline that explains every dollar of change in workforce pay, in nominal and constant currency, reconciled to the cent and covered by 22 automated tests.
 
 A complete fictional company with synthetic data, built around problems that come up in any large HR and Finance analytics team. It contains no real company data and no real people. Five case studies share one workforce, one org structure, and one data model:
 
 | Case study | The question it answers | Status |
 | --- | --- | --- |
-| **Workforce Planning** | How do open positions, the recruiting pipeline, and hiring assumptions shape future headcount and cost? | 🔨 In progress |
-| **Headcount & FTE** | Does beginning workforce + inflows − outflows ± internal movement reconcile exactly to ending workforce, and how fast can it run at scale? | 🔨 In progress |
-| **Contingent Workforce** | Why don't the HR system and the vendor-management system agree, and which records are actually the same person? | 🔨 In progress |
-| **Compensation Intelligence** | Why did compensation change: merit, promotion, grade mix, location mix, or currency? | ✅ [Workforce cost bridge](https://github.com/thialp/people-analytics-warehouse) |
-| **Finance Growth Mix** | How much of workforce cost growth came from volume, mix, pay levels, and FX, with a decomposition that adds up? | 🔨 In progress |
+| **Workforce Planning** | How do open positions, the recruiting pipeline, and hiring assumptions shape future headcount and cost? | In progress |
+| **Headcount & FTE** | Does beginning workforce + inflows − outflows ± internal movement reconcile exactly to ending workforce, and how fast can it run at scale? | Built: [Headcount & FTE walk](https://github.com/thialp/people-analytics-warehouse#case-study-2-headcount--fte-walk) |
+| **Contingent Workforce** | Why don't the HR system and the vendor-management system agree, and which records are actually the same person? | In progress |
+| **Compensation Intelligence** | Why did compensation change: merit, promotion, grade mix, location mix, or currency? | Built: [Workforce cost bridge](https://github.com/thialp/people-analytics-warehouse) |
+| **Finance Growth Mix** | How much of workforce cost growth came from volume, mix, pay levels, and FX, with a decomposition that adds up? | In progress |
 
 Underneath them sits a shared platform:
 
