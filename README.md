@@ -63,13 +63,17 @@ flowchart LR
 | 🪑 | **[Workforce Planning](https://github.com/thialp/people-analytics-warehouse#case-study-1-workforce-planning)** | Are we hiring into the seats we planned, and what did each seat look like before? | ![Built](https://img.shields.io/badge/data-built-6d28d9) ![Dashboard](https://img.shields.io/badge/dashboard-in_design-eab308) |
 | 📈 | **[Headcount & FTE Walk](https://github.com/thialp/people-analytics-warehouse#case-study-2-headcount--fte-walk)** | Start + hires − leavers ± moves = end, for employees and contractors, for any team. Reconciled exactly, and fast at scale | [![Live](https://img.shields.io/badge/Tableau-live-16a34a?logo=tableau&logoColor=white)](https://public.tableau.com/app/profile/thialp/viz/arcadia_headcount_fte_walk/ArcadiaHeadcount) |
 | 🗺️ | **[Global Workforce Footprint](https://github.com/thialp/people-analytics-warehouse#case-study-3-global-workforce-footprint)** | Where are our people, where are we growing, and who moves between offices? | ![Built](https://img.shields.io/badge/data-built-6d28d9) ![Dashboard](https://img.shields.io/badge/dashboard-coming_soon-eab308) |
-| 💵 | **[Compensation Walk](https://github.com/thialp/people-analytics-warehouse#case-study-4-compensation-walk)** | Why did pay change: hires, promotions, tenure raises, employer costs or currency? | [![Live](https://img.shields.io/badge/Tableau-live-16a34a?logo=tableau&logoColor=white)](https://public.tableau.com/app/profile/thialp/viz/ArcadiaCompensationWalk/Summary) |
+| 💵 | **[Compensation Walk](https://github.com/thialp/people-analytics-warehouse#case-study-4-compensation-walk)** | Why did pay change: hires, promotions, tenure raises, employer costs or currency? | [![Live](https://img.shields.io/badge/Tableau-live-16a34a?logo=tableau&logoColor=white)](https://public.tableau.com/app/profile/thialp/viz/ArcadiaCompensationWalk/Dashboard) |
 | 🧮 | **[Workforce Cost Bridge & Growth Mix](https://github.com/thialp/people-analytics-warehouse#case-study-5-workforce-cost-bridge)** | Did cost grow from more people, a different mix or pricier people? Split fairly with Shapley values, to the cent | ![Built](https://img.shields.io/badge/data-built-6d28d9) ![Dashboard](https://img.shields.io/badge/dashboard-coming_soon-eab308) |
 | 🔍 | **[Contingent Workforce Reconciliation](https://github.com/thialp/people-analytics-warehouse#case-study-6-contingent-workforce-reconciliation)** | Do the HR system and the supplier system agree on who works here? Every disagreement found, explained and routed (100% of planted issues detected) | ![Built](https://img.shields.io/badge/data-built-6d28d9) ![Dashboard](https://img.shields.io/badge/dashboard-coming_soon-eab308) |
 
 <a href="https://public.tableau.com/app/profile/thialp/viz/arcadia_headcount_fte_walk/ArcadiaHeadcount"><img src="https://raw.githubusercontent.com/thialp/people-analytics-warehouse/main/docs/images/headcount_fte_walk_dashboard.png" alt="Headcount & FTE Walk dashboard on Tableau Public" width="100%"></a>
 
 <sub>The Headcount & FTE Walk on Tableau Public. Click to open the interactive dashboard.</sub>
+
+<a href="https://public.tableau.com/app/profile/thialp/viz/ArcadiaCompensationWalk/Dashboard"><img src="https://raw.githubusercontent.com/thialp/people-analytics-warehouse/main/docs/images/compensation_walk_dashboard.png" alt="Compensation Walk dashboard on Tableau Public" width="100%"></a>
+
+<sub>The Compensation Walk on Tableau Public. Click to open the interactive dashboard.</sub>
 
 ---
 
