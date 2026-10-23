@@ -19,30 +19,32 @@ Most of the hard work in enterprise analytics happens before anything reaches a 
 
 <a href="https://github.com/thialp/people-analytics-warehouse"><img src="https://raw.githubusercontent.com/thialp/people-analytics-warehouse/main/docs/brand/arcadia_logo_horizontal.svg" alt="Arcadia Systems" height="44"></a>
 
-A complete HR data platform for **Arcadia Systems**, a made-up 42,000-person global company: two source systems, five years of history, one data model, six case studies.
+A complete HR data platform for **Arcadia Systems**, a made-up 42,000-person global company: two source systems, five years of history, one data model, seven case studies.
 
 > [!NOTE]
 > **Fictional company, real-world numbers.** Every person, office and salary is synthetic, generated with Claude Code from rules I designed. No employer data, logic or screenshots are used. The simulation is anchored on real public data: ECB exchange rates, researched employer costs by country, real postal codes.
 
 | 👥 Employees | 🧰 Contractors | 🌍 Offices | 💱 Currencies | ✅ Automated tests |
 |:---:|:---:|:---:|:---:|:---:|
-| **30,014** | **11,941** | **35** in 22 countries | **17** | **78** |
+| **30,014** | **11,941** | **35** in 22 countries | **17** | **81** |
 
 ```mermaid
 flowchart LR
-    KS["🔵 HR system<br/>employees, pay, hiring"]
-    BW["🟠 Supplier system<br/>contractors, orders, rates"]
+    BW["🟠 Supplier system<br/>contract orders, rates"]
+    subgraph ARC["Arcadia"]
+        KS["🔵 <b>Arcadia HR system</b><br/>system of record<br/>employees and contractors,<br/>an Arcadia ID and a PID each"]
+        WH["🟣 Warehouse<br/>SQL · tests · reconciliation"]
+        TAB["🔷 Tableau<br/>dashboards"]
+    end
     PUB["🟢 Public data<br/>FX, employer costs"]
-    WH["🟣 Warehouse<br/>SQL · tests · reconciliation"]
-    TAB["🔷 Tableau<br/>dashboards"]
     DEC["⭐ Decisions"]
     BW -. "one-way feed" .-> KS
-    KS --> WH
-    BW --> WH
+    KS ==> WH
     PUB --> WH
     WH --> TAB --> DEC
-    classDef hr fill:#dbeafe,stroke:#1d4ed8,color:#0f172a,stroke-width:2px
-    classDef vms fill:#ffedd5,stroke:#c2410c,color:#0f172a,stroke-width:2px
+    BW -. "extract, to check the feed" .-> WH
+    classDef hr fill:#dbeafe,stroke:#1d4ed8,color:#0f172a,stroke-width:3px
+    classDef vms fill:#ffedd5,stroke:#c2410c,color:#0f172a,stroke-width:1px
     classDef pub fill:#dcfce7,stroke:#15803d,color:#0f172a,stroke-width:2px
     classDef wh fill:#ede9fe,stroke:#6d28d9,color:#0f172a,stroke-width:2px
     classDef tab fill:#cffafe,stroke:#0e7490,color:#0f172a,stroke-width:2px
@@ -54,20 +56,22 @@ flowchart LR
     class TAB tab
     class DEC dec
     linkStyle 0 stroke:#dc2626,stroke-width:2px
+    linkStyle 5 stroke:#94a3b8,stroke-width:1px
 ```
 
-### 📊 Six case studies, one company
+### 📊 Seven case studies, one company
 
 | | Case study | The question it answers | Status |
 |---|---|---|---|
-| 🪑 | **[Workforce Planning](https://github.com/thialp/people-analytics-warehouse#case-study-1-workforce-planning)** | Are we hiring into the seats we planned, and what did each seat look like before? | ![Built](https://img.shields.io/badge/data-built-6d28d9) ![Dashboard](https://img.shields.io/badge/dashboard-in_design-eab308) |
-| 📈 | **[Headcount & FTE Walk](https://github.com/thialp/people-analytics-warehouse#case-study-2-headcount--fte-walk)** | Start + hires − leavers ± moves = end, for employees and contractors, for any team. Reconciled exactly, and fast at scale | [![Live](https://img.shields.io/badge/Tableau-live-16a34a?logo=tableau&logoColor=white)](https://public.tableau.com/app/profile/thialp/viz/arcadia_headcount_fte_walk/ArcadiaHeadcount) |
+| 🪑 | **[Workforce Planning](https://github.com/thialp/people-analytics-warehouse#case-study-1-workforce-planning)** | How many positions (PIDs) do we hold, filled or vacant? Are we hiring into the ones we planned, and what did each look like before? | ![Built](https://img.shields.io/badge/data-built-6d28d9) ![Dashboard](https://img.shields.io/badge/dashboard-in_design-eab308) |
+| 📈 | **[Headcount & FTE Walk](https://github.com/thialp/people-analytics-warehouse#case-study-2-headcount--fte-walk)** | Start + hires − leavers ± moves = end, for employees and contractors, for any team. Reconciled exactly, and fast at scale | [![Live](https://img.shields.io/badge/Tableau-live-16a34a?logo=tableau&logoColor=white)](https://public.tableau.com/app/profile/thialp/viz/arcadia_headcount_fte_walk/Dashboard) |
 | 🗺️ | **[Global Workforce Footprint](https://github.com/thialp/people-analytics-warehouse#case-study-3-global-workforce-footprint)** | Where are our people, where are we growing, and who moves between offices? | ![Built](https://img.shields.io/badge/data-built-6d28d9) ![Dashboard](https://img.shields.io/badge/dashboard-coming_soon-eab308) |
 | 💵 | **[Compensation Walk](https://github.com/thialp/people-analytics-warehouse#case-study-4-compensation-walk)** | Why did pay change: hires, promotions, tenure raises, employer costs or currency? | [![Live](https://img.shields.io/badge/Tableau-live-16a34a?logo=tableau&logoColor=white)](https://public.tableau.com/app/profile/thialp/viz/ArcadiaCompensationWalk/Dashboard) |
 | 🧮 | **[Workforce Cost Bridge & Growth Mix](https://github.com/thialp/people-analytics-warehouse#case-study-5-workforce-cost-bridge)** | Did cost grow from more people, a different mix or pricier people? Split fairly with Shapley values, to the cent | ![Built](https://img.shields.io/badge/data-built-6d28d9) ![Dashboard](https://img.shields.io/badge/dashboard-coming_soon-eab308) |
 | 🔍 | **[Contingent Workforce Reconciliation](https://github.com/thialp/people-analytics-warehouse#case-study-6-contingent-workforce-reconciliation)** | Do the HR system and the supplier system agree on who works here? Every disagreement found, explained and routed (100% of planted issues detected) | ![Built](https://img.shields.io/badge/data-built-6d28d9) ![Dashboard](https://img.shields.io/badge/dashboard-coming_soon-eab308) |
+| 🔮 | **[PID Fill Forecast](https://github.com/thialp/people-analytics-warehouse#case-study-7-pid-fill-forecast-planned)** | How many PIDs will growth and attrition open, and how fast can we fill them? | ![Planned](https://img.shields.io/badge/status-planned-94a3b8) |
 
-<a href="https://public.tableau.com/app/profile/thialp/viz/arcadia_headcount_fte_walk/ArcadiaHeadcount"><img src="https://raw.githubusercontent.com/thialp/people-analytics-warehouse/main/docs/images/headcount_fte_walk_dashboard.png" alt="Headcount & FTE Walk dashboard on Tableau Public" width="100%"></a>
+<a href="https://public.tableau.com/app/profile/thialp/viz/arcadia_headcount_fte_walk/Dashboard"><img src="https://raw.githubusercontent.com/thialp/people-analytics-warehouse/main/docs/images/headcount_fte_walk_dashboard.png" alt="Headcount & FTE Walk dashboard on Tableau Public" width="100%"></a>
 
 <sub>The Headcount & FTE Walk on Tableau Public. Click to open the interactive dashboard.</sub>
 
