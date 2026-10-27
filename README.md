@@ -18,77 +18,61 @@ Most of the hard work in enterprise analytics happens before anything reaches a 
 
 ---
 
-### ⭐ Start here: [People Analytics Warehouse](https://github.com/thialp/people-analytics-warehouse)
+### 🏢 My main project: an HR data platform for a company that doesn't exist
+
+Over the years I've met the same problems again and again: two systems that disagree on who works here, headcounts that don't add up, hiring plans that drift from reality, and pay that changes for reasons nobody can name. I can't share my employers' data, so I built a company from scratch to show how I solve them.
 
 <a href="https://github.com/thialp/people-analytics-warehouse"><img src="https://raw.githubusercontent.com/thialp/people-analytics-warehouse/main/docs/brand/arcadia_logo_horizontal.svg" alt="Arcadia Systems" height="44"></a>
 
-A complete HR data platform for **Arcadia Systems**, a made-up 42,000-person global company: two source systems, five years of history, one data model, seven case studies.
+**Meet Arcadia Systems**, a made-up global company with five years of history: people joining, leaving, moving and getting promoted, contractors coming through suppliers, positions opening and closing, salaries in 17 currencies. Everyone in it is invented, but the company behaves like a real one, so the questions I answer with it are real questions.
 
 > [!NOTE]
-> **Fictional company, real-world numbers.** Every person, office and salary is synthetic, generated with Claude Code from rules I designed. No employer data, logic or screenshots are used. The simulation is anchored on real public data: ECB exchange rates, researched employer costs by country, real postal codes.
+> **Fictional company, real-world numbers.** Every person, office and salary is synthetic, generated with Claude Code from rules I designed. No employer data, logic or screenshots are used. The simulation runs on real public data: European Central Bank exchange rates, employer costs researched country by country, and real postal codes.
 
-| 👥 Employees | 🧰 Contractors | 🌍 Offices | 💱 Currencies | ✅ Automated tests |
-|:---:|:---:|:---:|:---:|:---:|
-| **30,014** | **11,941** | **35** in 22 countries | **17** | **88** |
+| 👥 Employees | 🧰 Contractors | 🌍 Offices | 💱 Currencies |
+|:---:|:---:|:---:|:---:|
+| **30,014** | **11,941** | **35** in 22 countries | **17** |
 
-```mermaid
-flowchart LR
-    BW["🟠 Supplier system<br/>contract orders, rates"]
-    subgraph ARC["Arcadia"]
-        KS["🔵 <b>Arcadia HR system</b><br/>system of record<br/>employees and contractors,<br/>an Arcadia ID and a PID each"]
-        WH["🟣 Warehouse<br/>SQL · tests · reconciliation"]
-        TAB["🔷 Tableau<br/>dashboards"]
-    end
-    PUB["🟢 Public data<br/>FX, employer costs"]
-    HLX["🟤 Ticket system<br/>fixes raised, replayed at each close"]
-    DEC["⭐ Decisions"]
-    BW -. "one-way feed" .-> KS
-    KS ==> WH
-    PUB --> WH
-    WH --> TAB --> DEC
-    BW -. "extract, to check the feed" .-> WH
-    HLX -. "tickets" .-> WH
-    classDef hr fill:#dbeafe,stroke:#1d4ed8,color:#0f172a,stroke-width:3px
-    classDef vms fill:#ffedd5,stroke:#c2410c,color:#0f172a,stroke-width:1px
-    classDef pub fill:#dcfce7,stroke:#15803d,color:#0f172a,stroke-width:2px
-    classDef wh fill:#ede9fe,stroke:#6d28d9,color:#0f172a,stroke-width:2px
-    classDef tab fill:#cffafe,stroke:#0e7490,color:#0f172a,stroke-width:2px
-    classDef dec fill:#fef9c3,stroke:#a16207,color:#0f172a,stroke-width:2px
-    classDef hlx fill:#f5f5f4,stroke:#78716c,color:#0f172a,stroke-width:1px
-    class KS hr
-    class BW vms
-    class PUB pub
-    class WH wh
-    class TAB tab
-    class DEC dec
-    class HLX hlx
-    linkStyle 0 stroke:#dc2626,stroke-width:2px
-    linkStyle 5 stroke:#94a3b8,stroke-width:1px
-```
+**How it fits together.** Like most large companies, Arcadia keeps everyone in its HR system and buys contractors through a supplier system that feeds it. My warehouse brings those systems and the public data together, checks that every number adds up, and feeds the dashboards leaders use to decide.
 
-### 📊 Seven case studies, one company
+<a href="https://github.com/thialp/people-analytics-warehouse"><img src="assets/arcadia_platform.png" alt="How the Arcadia platform fits together: a supplier system feeds the HR system; the warehouse reads both, plus public data and tickets, checks everything, and feeds the dashboards that support decisions" width="100%"></a>
+
+### 📊 Case studies, one company
+
+Each case study is a question I've been asked at work, answered on Arcadia's data.
 
 | | Case study | The question it answers | Status |
 |---|---|---|---|
 | 📈 | **[Headcount & FTE Walk](https://github.com/thialp/people-analytics-warehouse#case-study-1-headcount--fte-walk)** | Start + hires − leavers ± moves = end, for employees and contractors, for any team. Reconciled exactly, and fast at scale | [![Live](https://img.shields.io/badge/Tableau-live-16a34a?logo=tableau&logoColor=white)](https://public.tableau.com/app/profile/thialp/viz/arcadia_headcount_fte_walk/Dashboard) |
 | 💵 | **[Compensation Walk](https://github.com/thialp/people-analytics-warehouse#case-study-2-compensation-walk)** | Why did pay change: hires, promotions, tenure raises, employer costs or currency? | [![Live](https://img.shields.io/badge/Tableau-live-16a34a?logo=tableau&logoColor=white)](https://public.tableau.com/app/profile/thialp/viz/ArcadiaCompensationWalk/Dashboard) |
 | 🪑 | **[Workforce Planning](https://github.com/thialp/people-analytics-warehouse#case-study-3-workforce-planning)** | How many positions (PIDs) do we hold, filled or vacant? Are we hiring into the ones we planned, and what did each look like before? | [![Live](https://img.shields.io/badge/Tableau-live-16a34a?logo=tableau&logoColor=white)](https://public.tableau.com/app/profile/thialp/viz/WorkforcePlanningArcadiaSystems/Dashboard) |
-| 🔍 | **[Contingent Workforce Reconciliation](https://github.com/thialp/people-analytics-warehouse#case-study-4-contingent-workforce-reconciliation)** | Do the HR system and the supplier system agree on who works here? Every disagreement found, explained and routed (100% of planted issues detected); at each month-end close, which gaps put Finance's report at risk and where each one is fixed | ![Built](https://img.shields.io/badge/data-built-6d28d9) ![Dashboard](https://img.shields.io/badge/dashboard-in_build-0e7490) |
+| 🔍 | **[Contingent Workforce Reconciliation](https://github.com/thialp/people-analytics-warehouse#case-study-4-contingent-workforce-reconciliation)** | At each month-end close, where do the HR system and the supplier system disagree, what does each gap put at risk in Finance's report, and where does it get fixed? Every planted issue found (100%) | [![Live](https://img.shields.io/badge/Tableau-live-16a34a?logo=tableau&logoColor=white)](https://public.tableau.com/app/profile/thialp/viz/ContingentWorkforceReconciliationArcadiaSystems/Dashboard) |
 | 🗺️ | **[Global Workforce Footprint](https://github.com/thialp/people-analytics-warehouse#case-study-5-global-workforce-footprint)** | Where are our people, where are we growing, and who moves between offices? | ![Built](https://img.shields.io/badge/data-built-6d28d9) ![Dashboard](https://img.shields.io/badge/dashboard-coming_soon-eab308) |
 | 🧮 | **[Workforce Cost Bridge & Growth Mix](https://github.com/thialp/people-analytics-warehouse#case-study-6-workforce-cost-bridge)** | Did cost grow from more people, a different mix or pricier people? Split fairly with Shapley values, to the cent | ![Built](https://img.shields.io/badge/data-built-6d28d9) ![Dashboard](https://img.shields.io/badge/dashboard-coming_soon-eab308) |
 | 🔮 | **[PID Fill Forecast](https://github.com/thialp/people-analytics-warehouse#case-study-7-pid-fill-forecast-planned)** | How many PIDs will growth and attrition open, and how fast can we fill them? | ![Planned](https://img.shields.io/badge/status-planned-94a3b8) |
 
+
+#### 🆕 Contingent Workforce Reconciliation
+<a href="https://public.tableau.com/app/profile/thialp/viz/ContingentWorkforceReconciliationArcadiaSystems/Dashboard"><img src="assets/cw_reconciliation_dashboard.png" alt="Contingent Workforce Reconciliation dashboard on Tableau Public" width="100%"></a>
+
+<sub>Where the HR and supplier systems disagree at the June 2026 close, and who fixes each gap. Click to open the interactive dashboard.</sub>
+
+#### Headcount & FTE Walk
 <a href="https://public.tableau.com/app/profile/thialp/viz/arcadia_headcount_fte_walk/Dashboard"><img src="https://raw.githubusercontent.com/thialp/people-analytics-warehouse/main/docs/images/headcount_fte_walk_dashboard.png" alt="Headcount & FTE Walk dashboard on Tableau Public" width="100%"></a>
 
-<sub>The Headcount & FTE Walk on Tableau Public. Click to open the interactive dashboard.</sub>
+<sub>How the workforce changed, and why. Click to open the interactive dashboard.</sub>
 
+#### Compensation Walk
 <a href="https://public.tableau.com/app/profile/thialp/viz/ArcadiaCompensationWalk/Dashboard"><img src="https://raw.githubusercontent.com/thialp/people-analytics-warehouse/main/docs/images/compensation_walk_dashboard.png" alt="Compensation Walk dashboard on Tableau Public" width="100%"></a>
 
-<sub>The Compensation Walk on Tableau Public. Click to open the interactive dashboard.</sub>
+<sub>Every dollar of pay change traced to its cause. Click to open the interactive dashboard.</sub>
 
+#### Workforce Planning
 <a href="https://public.tableau.com/app/profile/thialp/viz/WorkforcePlanningArcadiaSystems/Dashboard"><img src="https://raw.githubusercontent.com/thialp/people-analytics-warehouse/main/docs/images/workforce_planning_dashboard.png" alt="Workforce Planning dashboard on Tableau Public" width="100%"></a>
 
-<sub>Workforce Planning on Tableau Public. Click to open the interactive dashboard.</sub>
+<sub>Are we hiring into the positions we planned? Click to open the interactive dashboard.</sub>
+
+**👉 Want the details?** The data model, the SQL, the tests and a step-by-step build guide for every dashboard are in the **[People Analytics Warehouse](https://github.com/thialp/people-analytics-warehouse)** repository.
 
 ---
 
@@ -119,7 +103,6 @@ flowchart LR
 ![SAP Fieldglass](https://img.shields.io/badge/SAP_Fieldglass-0FAAFF?style=flat-square&logo=sap&logoColor=white)
 ![Alteryx](https://img.shields.io/badge/Alteryx-0078C0?style=flat-square&logo=alteryx&logoColor=white)
 ![Jira](https://img.shields.io/badge/Agile_·_Jira-0052CC?style=flat-square&logo=jira&logoColor=white)
-![PMP](https://img.shields.io/badge/PMP-1f2937?style=flat-square)
 
 ATS & VMS data · data modeling · effective-dated history · cross-system reconciliation · AI-assisted analytics development
 
