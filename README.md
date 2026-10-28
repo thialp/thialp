@@ -79,7 +79,7 @@ Each case study is a question I've been asked at work, answered on Arcadia's dat
 
 **👉 Want the details?** The data model, the SQL, the tests and a step-by-step build guide for every dashboard are in the **[People Analytics Warehouse](https://github.com/thialp/people-analytics-warehouse)** repository.
 
-**🎨 Designed first, in Figma.** Every dashboard starts as a page spec at Tableau's exact pixels: layout, type and color come from the **[Arcadia Analytics · Tableau UI Kit](https://www.figma.com/community/file/1690422855000144024)** on Figma Community, and each dashboard's spec is on **[my Figma profile](https://www.figma.com/@thialp)**.
+**🎨 Designed first, in Figma.** New here? **[Start here](https://www.figma.com/community/file/1697367563349387375)** is the whole portfolio on one page. Every dashboard starts as a page spec at Tableau's exact pixels: layout, type and color come from the **[Arcadia Analytics · Tableau UI Kit](https://www.figma.com/community/file/1690422855000144024)** on Figma Community, and each dashboard's spec is on **[my Figma profile](https://www.figma.com/@thialp)**.
 
 ---
 
