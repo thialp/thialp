@@ -31,7 +31,7 @@ Over the years I've met the same problems again and again: two systems that disa
 
 | 👥 Employees | 🧰 Contractors | 🌍 Offices | 💱 Currencies |
 |:---:|:---:|:---:|:---:|
-| **30,014** | **11,941** | **35** in 22 countries | **17** |
+| **30,005** | **11,941** | **35** in 22 countries | **17** |
 
 **How it fits together.** Like most large companies, Arcadia keeps everyone in its HR system and buys contractors through a supplier system that feeds it. My warehouse brings those systems and the public data together, checks that every number adds up, and feeds the dashboards leaders use to decide.
 
@@ -78,6 +78,8 @@ Each case study is a question I've been asked at work, answered on Arcadia's dat
 <sub>Are we hiring into the positions we planned? Click to open the interactive dashboard.</sub>
 
 **👉 Want the details?** The data model, the SQL, the tests and a step-by-step build guide for every dashboard are in the **[People Analytics Warehouse](https://github.com/thialp/people-analytics-warehouse)** repository.
+
+**🎨 Designed first, in Figma.** Every dashboard starts as a page spec at Tableau's exact pixels: layout, type and color come from the **[Arcadia Analytics · Tableau UI Kit](https://www.figma.com/community/file/1690422855000144024)** on Figma Community, and each dashboard's spec is on **[my Figma profile](https://www.figma.com/@thialp)**.
 
 ---
 
