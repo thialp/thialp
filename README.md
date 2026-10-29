@@ -81,6 +81,15 @@ Each case study is a question I've been asked at work, answered on Arcadia's dat
 
 **🎨 Designed first, in Figma.** New here? **[Start here](https://www.figma.com/community/file/1697367563349387375)** is the whole portfolio on one page. Every dashboard starts as a page spec at Tableau's exact pixels: layout, type and color come from the **[Arcadia Analytics · Tableau UI Kit](https://www.figma.com/community/file/1690422855000144024)** on Figma Community, and each dashboard's spec is on **[my Figma profile](https://www.figma.com/@thialp)**.
 
+### 📘 Tableau lessons
+
+Techniques from these dashboards, rebuilt step by step from an empty workbook. Every step is a tab in the downloadable workbook, with its instructions in the sheet's caption; the data, images and full guide are in **[tableau-how-to](https://github.com/thialp/tableau-how-to)**.
+
+| # | Lesson | You'll build | |
+|---|---|---|---|
+| 1 | **[Multi-select filters from shapes](https://github.com/thialp/tableau-how-to/tree/main/01-multi-select-filters)** | A filter panel built from worksheets and images: tick lists, a parent-to-child cascade, and options that gray out | [![Live](https://img.shields.io/badge/Tableau-live-16a34a?logo=tableau&logoColor=white)](https://public.tableau.com/app/profile/thialp/viz/HowtoBuildMulti-SelectFiltersfromShapesArcadiaHow-To/Multi-selectfilters) |
+| 2 | **[A period picker for year, year to date, quarter and month](https://github.com/thialp/tableau-how-to/tree/main/02-period-selection)** | One picker for any span, ending today or on a closed month-end, compared with last year or the prior period, with a fair "to date" rule | [![Live](https://img.shields.io/badge/Tableau-live-16a34a?logo=tableau&logoColor=white)](https://public.tableau.com/app/profile/thialp/viz/HowtoBuildaPeriodPickerforYoYYTDQuarterandMonthArcadiaHow-To/Periodselection) |
+
 ---
 
 ### 🧭 How I work
