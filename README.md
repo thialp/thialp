@@ -94,6 +94,7 @@ Techniques from these dashboards, rebuilt step by step from an empty workbook. E
 |---|---|---|---|
 | 1 | **[Multi-select filters from shapes](https://github.com/thialp/tableau-how-to/tree/main/01-multi-select-filters)** | A filter panel built from worksheets and images: tick lists, a parent-to-child cascade, and options that gray out | [![Live](https://img.shields.io/badge/Tableau-live-16a34a?logo=tableau&logoColor=white)](https://public.tableau.com/app/profile/thialp/viz/HowtoBuildMulti-SelectFiltersfromShapesArcadiaHow-To/Multi-selectfilters) |
 | 2 | **[A period picker for year, year to date, quarter and month](https://github.com/thialp/tableau-how-to/tree/main/02-period-selection)** | One picker for any span, ending today or on a closed month-end, compared with last year or the prior period, with a fair "to date" rule | [![Live](https://img.shields.io/badge/Tableau-live-16a34a?logo=tableau&logoColor=white)](https://public.tableau.com/app/profile/thialp/viz/HowtoBuildaPeriodPickerforYoYYTDQuarterandMonthArcadiaHow-To/Periodselection) |
+| 3 | **[Dashboard cards that expand, close and grow in any direction](https://github.com/thialp/tableau-how-to/tree/main/03-card-zoom)** | A card borrows the space of the others: expand and close, then wide, tall or full in any combination, 21 layouts from four cards | [![Live](https://img.shields.io/badge/Tableau-live-16a34a?logo=tableau&logoColor=white)](https://public.tableau.com/app/profile/thialp/viz/Howtomakedashboardcardsexpandandclose/Level2Growinanydirection) |
 
 ---
 
